@@ -24,4 +24,9 @@ This is total processing time for ALL requests - divide this by requestCount for
 
 This is an advanced metric that gives the concurrency of the application - it's not directly available in the standard MBeans interface - however, you can write a script. One way is to fetch the data from the JMX interface over HTTP and track store its state over time. You could use the <code>/manager/status</code> endpoint to see all the data. The total number of all the request threads in "Service" stage is the concurrency of the application. Alternatively - you could also get this data from Threading related MBeans - all threads in state number "3" are service threads - the number mapping is not documented, but you can check the source code for the same. For confirming the validity of your data, use Little's Law (<code>Xdat * Rdat</code>) - these quantities should be almost same.
 
+4. CPU Utilization and Service Time
+
+This is the CPU utilization <code>Udat</code> as reported by Linux. Use Little's Law as <code>Sest = Udat/Xdat</code> to estimate the service time.
+
+
 

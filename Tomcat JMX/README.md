@@ -9,7 +9,7 @@
 ### Background
 Tomcat's default JMX interface has a lot of useful metrics oganized in MBeans. Its helpful to accustom yourself with their structure, by using tools such as <code>jmxterm</code> (check out [this](https://cwiki.apache.org/confluence/display/KAFKA/jmxterm+quickstart) entry on the Kafka project wiki as a quick tutorial for using jmxterm) and <code>Java Management Console</code>. It is also possible to extend and customise MBeans - this can be a big advantage when doing in-depth performance analysis.
 
-If you use <code>datadog</code> - you can use their [Tomcat integration](https://docs.datadoghq.com/integrations/tomcat/) to get the metrics. 
+If you use <code>datadog</code> - you can use their [Tomcat integration](https://docs.datadoghq.com/integrations/tomcat/) to get the following metrics. 
 
 ### Data 
 The <code>GlobalRequestProcessor</code> MBean (for each connector, for eg., <code>ajp-bio-8009</code>) consists of the most important metrics to be used by PDQ - however, note that this MBean contains aggregate numbers across all the application endpoints - so if you have multiple endpoints with different workloads and behavior, you will have to collect the data yourself across the various RequestProcessor MBeans.  
